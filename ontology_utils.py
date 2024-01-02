@@ -27,6 +27,7 @@ class OntologyManager:
     def __init__(self, base_path, catalog_file):
         self.base_path = base_path
         self.catalog_file = catalog_file
+        self.catalog_path = os.path.join(self.base_path, self.catalog_file)
         self.catalog_mappings = {}
         self.ontology_graphs = {}
         self.organized_ontologies = {}
@@ -56,7 +57,7 @@ class OntologyManager:
         mappings = {}
         try:
             # Parse the XML file
-            tree = ET.parse(catalog_file)
+            tree = ET.parse(self.catalog_path)
             root = tree.getroot()
 
             # handle the default namespace, this is something found in the catalog... 
@@ -75,11 +76,26 @@ class OntologyManager:
         except ET.ParseError as e:
             print(f"Error parsing XML: {e}")
         except FileNotFoundError:
-            print(f"File not found: {self.catalog_file}")
+            print(f"File not found: {self.catalog_path}")
 
     def print_catalog(self):
-        # Print the catalog contents for debugging
-        pass
+        """
+            Reads a file and prints its contents and print the catalog contents for debugging.
+            
+            Args:
+            file_path (str): Path to the file, taken from the class instance attributes. 
+        """
+        try:
+            with open(self.catalog_path, 'r') as file:
+                contents = file.read()
+                print(contents)
+        except FileNotFoundError:
+            print(f"File not found: {self.file_path}")
+        except IOError as e:
+            print(f"Error reading file: {e}")
+
+        # Replace 'path/to/catalog.xml' with the actual path to your catalog file
+        # print_file_contents('path/to/catalog.xml')
 
     def load_ontology(self):
         # Load ontologies into graphs
