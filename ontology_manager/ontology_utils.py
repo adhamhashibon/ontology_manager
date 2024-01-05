@@ -21,7 +21,7 @@ from rdflib.namespace import RDF, SKOS, RDFS,  FOAF,  OWL
 from rdflib import Graph, URIRef, Namespace, Literal, BNode
 import xml.etree.ElementTree as ET  
 from urllib.parse import urlparse
-import os
+import os, warnings
 
 class OntologyManager:
     """
@@ -102,17 +102,18 @@ class OntologyManager:
         dict: A dictionary mapping ontology URIs to their respective RDFLib graphs.
         """
         
-        self.ontology_graphs = {}
+        self.ontology_graphs = {} # change to ontograph
         for onto_uri, relative_onto_path in self.catalog_map.items():
             # Construct the full path to the ontology file
             ontology_path = os.path.join(self.ontology_base_path, relative_onto_path)
 
             # Create a new RDFLIB graph for this ontology
             g = Graph()
-
+            
+                
             # Load the ontology into the graph
             try:
-                g.parse(ontology_path, format='turtle')
+                g.parse(ontology_path, format='turtle') # todo support other ontology formats? 
                 self.ontology_graphs[onto_uri] = g
                 print(f"Loaded ontology: {onto_uri}")
             except Exception as e:
@@ -121,18 +122,21 @@ class OntologyManager:
     
     def find (self, some_keyword):
         """
-        Find a specific ontology given some keyword (e.g., subdomain)
+        
+        Find a specific ontology given some keyword (e.g., subdomain) in the URI 
         :params: keyword
         :return: list of URI for the ontology with relevant keywords
-        The ontology may then be obtaubed from self.ontology[URI] --> graph 
+        The ontology may then be obtained from self.ontology[URI] --> graph 
+        
         """
-        dict_keys = [key for key in self.ontology if some_keyword in key]
+        
+        dict_keys = [key for key in self.ontology_graphs if some_keyword in key]
 
         return dict_keys
 
     def parse_uri (self, uri):
         """
-            Extracts the base and last path segment from a URI (the local fragment).
+        Extracts the base and last path segment from a URI (the local fragment).
 
         :params: uri: Str: The URI to parse.
 
@@ -156,19 +160,34 @@ class OntologyManager:
         parsed_uri.path.strip('/')[-1] for the fragment (or replace '/' with ':')
         lets try it.  
 
-
-        
         """
-        parsed_uri = urlparse(uri)
+        
+        if not isinstance (uri, URIRef):
+            warnings.warn("The provided input is not a URIRef object", RuntimeWarning)
+            return ""
+        
+        parsed_uri = urlparse(uri) # see examples for explanation, we want to cover all cases of 
+
+        if '#' in str(uri):
+            fragment_uri = parsed_uri.fragment
+            base_uri=parsed_uri.scheme+'://'+parsed_uri.netloc+parsed_uri.path
+        elif ':' in str(parsed_uri.path): 
+            fragment_uri = parsed_uri.path.split(':')[-1]
+            base_uri = URIRef(str(uri))[:-len(fragment_uri)]
+        else:
+            fragment_uri = parsed_uri.path.split('/')[-1]
+            base_uri = URIRef(str(uri))[:-len(fragment_uri)]
+        
         #base_url = urlunparse(parsed_uri._replace(path='/', fragment=''))
 
         #return parsed_uri.path.strip('/').split('/')[-1]
-        return parsed_uri
-    
+
+        return {"parsed_uri":parsed_uri, "base_uri": base_uri, "fragment_uri": fragment_uri}
+        
+        #return { "base_uri": base_uri, "fragment_uri": fragment_uri}
 
     def fix_emmo_label(self):
         """
-
         Take EMMO which uses a local fragment like this: EMMO_<some UID> which makes it obscure to work with, 
         hence we have this utility that does the following: 
 
@@ -180,14 +199,18 @@ class OntologyManager:
         - replaces it with the new label
         
         """
-    
-        for _, g in self.ontology_graphs.items():
-             for s,p, o in g:
-                print(str(s), self.parse_uri(s))
-            
-        
+        print(80*'-')
+        print(80*'-')
+        print(80*'-')
 
+        print("inside fix emmo label")
+        #for _, g in self.ontology_graphs.items():
+        #    if "properties" in _:
+        #        for s,p, o in g:
+        #            print('[', str(s), str(p), str(o),']', self.parse_uri(s), '\n')
         
+        k=self.find('properties')
+        [print(i) for i in k]        
     
     def unfix_emmo_label(self):
         pass
