@@ -210,7 +210,17 @@ class OntologyManager:
         #            print('[', str(s), str(p), str(o),']', self.parse_uri(s), '\n')
         
         k=self.find('properties')
-        [print(i) for i in k]        
+        [print(i) for i in k]       
+
+        """
+          now that we know got the test ontolgy, lets loop and change each strange local fragment to something usefdul, 
+          however note we cannot just simple replace the first occurence, as the same fragment can appear in many bjects and subjects. 
+
+          one option is to use a map store, we call it uid_label_map for example, then we need everytime to ask 
+            - is this uri a uid type, if yes, do we have already a mapping, if yes use it, if not create one. 
+
+            note though that the mapping could be part of the new ontology, if we are copting. need to check how rdflib updates graphs.      
+        """
     
     def unfix_emmo_label(self):
         pass
