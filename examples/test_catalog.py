@@ -42,7 +42,8 @@ def main():
     print (type(onto_properties))
     print(onto_properties.serialize())
 
-    manager.fix_emmo_label()
+    manager.fix_emmo_label("EMMO_", "http://emmo.info/emmo#")
+    
 
     #for suri in ('http://example.org/people#bob', 'http://example.org/people/bob', 'http://example.org/people:bob'):
     #    print (suri)    
