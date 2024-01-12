@@ -31,27 +31,11 @@ def main():
     #    print(_, __)#, manager.get_last_path_segment(_))
 
     #print(80*'-')
-    print("fixing the emmo horror\n")
-
-    k=manager.find('properties')
-    print(k, len(k), 'ontologyies match, they are')
+    uri=URIRef("http://emmo.info/emmo#EMMO_9be5fcc4_0d8b_481d_b984_6338d4b55588")
     
-    [print(i) for i in k]
+    parsed = manager.parse_uri(uri)
 
-    onto_properties=manager.ontology_graphs[str(k[0])]
-    print (type(onto_properties))
-    print(onto_properties.serialize())
-
-
-    manager.emmo_to_label("http://emmo.info/emmo", "EMMO_", "skos:prefLabel") # not sure we need the prefix! 
-
-    
-
-    #for suri in ('http://example.org/people#bob', 'http://example.org/people/bob', 'http://example.org/people:bob'):
-    #    print (suri)    
-    #    o=manager.parse_uri(URIRef(suri))
-    #   print(o)
-
-
+    print ("uri=", uri)
+    print ("parsed_uri=", parsed)
 if __name__ == "__main__":
     main()

@@ -49,7 +49,7 @@ import xml.etree.ElementTree as ET
 from urllib.parse import urlparse
 import os, warnings
 import re, uuid
-
+from typing import Union
 
 
     
@@ -202,7 +202,7 @@ class OntologyManager:
                 print(f"Error loading ontology {onto_uri}: {e}")
 
     
-    def find (self, some_keyword):
+    def find (self, some_keyword: str=""):
         """
         
         Find a specific ontology given some keyword (e.g., subdomain) in the URI 
@@ -218,7 +218,7 @@ class OntologyManager:
 
         return dict_keys
 
-    def parse_uri (self, uri):
+    def parse_uri (self, uri: Union[str, URIRef]=None):
         """
         Extracts the base and last path segment from a URI (the local fragment).
 
@@ -226,7 +226,18 @@ class OntologyManager:
 
         :Returns: dict of  {"parsed_uri": parsed_uri, "base_uri": base_uri, "fragment_uri": fragment_uri}
         
-        # this does not work, but keeping it for ref.
+
+        e.g. 
+
+        uri= http://emmo.info/emmo#EMMO_9be5fcc4_0d8b_481d_b984_6338d4b55588
+        parsed_uri= {'parsed_uri': ParseResult(scheme='http', netloc='emmo.info', path='/emmo', params='', query='',            
+                    fragment='EMMO_9be5fcc4_0d8b_481d_b984_6338d4b55588'), 
+                    'base_uri': 'http://emmo.info/emmo', 
+                    'fragment_uri': 'EMMO_9be5fcc4_0d8b_481d_b984_6338d4b55588'}
+
+                the base_uri and fragment_uri are the most useful normally. 
+
+        # this following does not work, but keeping it for ref.
         # parsed_uri.path.strip('/')[-1] for the fragment (or replace '/' with ':')
         lets try it.  
 
@@ -241,40 +252,41 @@ class OntologyManager:
         if '#' in str(uri):
             fragment_uri = parsed_uri.fragment
             base_uri=parsed_uri.scheme+'://'+parsed_uri.netloc+parsed_uri.path
+            separator = '#'
         elif ':' in str(parsed_uri.path): 
             fragment_uri = parsed_uri.path.split(':')[-1]
             base_uri = URIRef(str(uri))[:-len(fragment_uri)]
+            separator = ':'
         else:
             fragment_uri = parsed_uri.path.split('/')[-1]
             base_uri = URIRef(str(uri))[:-len(fragment_uri)]
-        
+            separator = '/'
         # various tests, keeping for ref.
         #base_url = urlunparse(parsed_uri._replace(path='/', fragment=''))
         #return parsed_uri.path.strip('/').split('/')[-1]
         #return { "base_uri": base_uri, "fragment_uri": fragment_uri}
-        print ("parsed_uri", parsed_uri, "base_uri", base_uri, "fragment_uri", fragment_uri )
-        return {"parsed_uri": parsed_uri, "base_uri": base_uri, "fragment_uri": fragment_uri}
+        #print ("parsed_uri", parsed_uri, "base_uri", base_uri, "fragment_uri", fragment_uri )
+        return {"parsed_uri": parsed_uri, "separator": separator, "base_uri": base_uri, "fragment_uri": fragment_uri}
         
-    def fix_emmo_label(self, onto_prefix, onto_namespace):
+    def emmo_to_label(self, onto_namespace: Union[URIRef, str]=None, onto_prefix:str=None, new_annotation:str=None):
         """
         Modify the label of ontology items produced by protege method for prefix+Global ID (a UUID with _) 
-        to human friendly labels. 
+        to human friendly/collaboration easy labels. 
 
         a mapping is created and is embedded into the modified ontology (added property hasUIDLabel with the old label). 
         this is so we can map it back if needed. 
-
-        the reason for this is that using the label makes life much easier for working with the ontology, as
-        the ontology is a sort of human-machine interface. Using code, is extremely prone to error and makes development very 
-        uneasy. 
 
 
         parameters: 
         :onto_prefix: is the prefix used in the protege, see https://github.com/emmo-repo/EMMO/blob/master/doc/protege-setup.md
         the parameter should be set to PREFIX_ : a given prefix for the ontology in protege.
+        e.g. EMMO_ for emmo.
 
-        :onto_namespace is the name space, e.g, http://emmo.info/emmo# that should be changed, the separator (#, /, :) is needed.
+        :onto_namespace is the name space, e.g, http://emmo.info/emmo that should be changed, the separator (#, /, :) should not be provided.
 
+        :new_annotation: is the new annotation property, e.g. skos:prefLabel, rdfs:label, ... 
 
+        Although designed for EMMO, it is intended to be general. 
 
         : internal comments for devs
         pattern=rf'^{re.escape(prefix)}[0-9a-fA-F_\-]+'
@@ -311,11 +323,6 @@ class OntologyManager:
 
         
         """
-        print(80*'-')
-        print(80*'-')
-        print(80*'-')
-
-        print("inside fix emmo label")
         #for _, g in self.ontology_graphs.items():
         #    if "properties" in _:
         #        for s,p, o in g:
@@ -324,23 +331,43 @@ class OntologyManager:
 
         print("replacing the prefix ", onto_prefix, "with name space", onto_namespace)
         # find the properties ontology, just for testing. 
-        k=self.find('properties')
-        [print(i) for i in k]       
+       
+       
+        k=self.find('perceptual')
+        print(k)
+        #guid_pattern = re.compile(r"onto_prefix[0-9a-fA-F]{8}_[0-9a-fA-F]{4}_[0-9a-fA-F]{4}_[0-9a-fA-F]{4}_[0-9a-fA-F]{12}")
+        
+        g1=self.ontology_graphs[k[0]]
+        print(g1)
 
-        print(k[0])
-        for s, p, o in self.ontology_graphs[k[0]]:
-            # check if the fragment (label), is of the form prefix+uuid then print. 
-            #print (s, p, o)
-            #guid_pattern = re.compile(r"onto_prefix[0-9a-fA-F]{8}_[0-9a-fA-F]{4}_[0-9a-fA-F]{4}_[0-9a-fA-F]{4}_[0-9a-fA-F]{12}")
+        for g in [g1]:     #in self.ontology_graphs.values():
+            print(g)    
+            for s, p, o in g:
+                for e in [s, p, o]: 
+                    if isinstance(e, URIRef):
+                        parsed_uri = self.parse_uri(e)
+                        local_name  = parsed_uri["fragment_uri"]
+                        name_space = parsed_uri["base_uri"]
+                        iri_separator = parsed_uri["separator"]
+                        assert (e==name_space+iri_separator+local_name)
+                        if name_space.startswith(onto_namespace) and local_name.startswith(onto_prefix):
+                            #print(onto_namespace, name_space, onto_prefix, local_name)
+                            gid = local_name.split(onto_prefix)[-1] 
+                            #print(gid, self.is_custom_uuid(gid))
+                            #print(e)
+                            
+                            #print(s,p,o)
+                            print("old e", e, f"({s,p,o})")
+                            #print("new e", URIRef(name_space+iri_separator+"XX"))
+                            if g.value(e, new_annotation) is not None: 
+                                print(f"new anno is {g.value(e, new_annotation)}")
+                            #print(f"new anno is {(e, URIRef(new_annotation))}")
 
-            for e in [s, p, o]: 
-                if isinstance(e, URIRef):
-                #    print ("Eureka")
-                #print (e, guid_pattern.search(str(e)))
-                #print (self.is_valid_uuid())       
-                    #print ("hello", type(self.parse_uri(e)),e, self.parse_uri(e)["fragment_uri"],"\n")
-                    if self.is_valid_uuid( self.parse_uri(e)["fragment_uri"]):
-                        print ("hello",  self.parse_uri(e)["fragment_uri"],"\n")
+        #for s, p, o in self.ontology_graphs[k[0]]:
+            # replace statements with s
+
+
+
         """
           now that we know got the test ontology, lets loop and change each strange local fragment to something useful, 
           however note we cannot just simple replace the first occurrence, as the same fragment can appear in many subjects and subjects. 
@@ -356,7 +383,7 @@ class OntologyManager:
 
 
 
-    def is_valid_uuid(val):
+    def is_valid_uuid(self, val):
         """
         see https://stackoverflow.com/questions/53847404/how-to-check-uuid-validity-in-python
         """
@@ -365,3 +392,193 @@ class OntologyManager:
             return True
         except ValueError:
             return False
+        
+
+    @staticmethod
+    def is_custom_uuid(s):
+        pattern = r'\b[a-f0-9]{8}_[a-f0-9]{4}_[a-f0-9]{4}_[a-f0-9]{4}_[a-f0-9]{12}\b'
+        return bool(re.fullmatch(pattern, s.lower()))
+
+    # Test the function
+    #test_string = "967080e5_2f42_4eb2_a3a9_c58143e835f9"
+    #print(is_custom_uuid(test_string))  # This should return True if the string matches the pattern
+
+
+    @staticmethod
+    def emmo_to_label_graph(onto_namespace: Namespace, new_annotation:URIRef, g:Graph):
+        """
+        Scan the graph, and replace annotation 
+
+        onto_namespace: URIRef: 
+        onto_prefix:    str
+        new_annotation: URIRef 
+        g:              Graph
+        
+        return: 
+        """
+        #print (g.serialize(format='n3'))
+        #print(f"Replacing prefix {onto_prefix}, with namespace, {onto_namespace} in ontology graph with new annotation {new_annotation}")       
+        onto_namespace=Namespace(onto_namespace)
+
+        s_map={}
+        o_map={}
+        p_map={}
+
+        # repetition, I know, but it works fine, verbatim is nice sometimes. 
+        # TODO:make issue and use a function/method instead
+        for s, p, o in g:
+            x=g.value(s, new_annotation)
+            if x is not None: 
+                #print(f"value found of {type(x)} with value {x}")
+                if s not in s_map:
+                    print(f"adding map between {s} and {x}")
+                    s_map[s]=onto_namespace[str(x)]
+
+            x=g.value(o, new_annotation)
+            if x is not None: 
+                #print(f"value found of {type(x)} with value {x}")
+                if o not in o_map and o not in s_map:
+                    print(f"adding map between {o} and {x}")
+                    o_map[o]=onto_namespace[str(x)]
+
+            x=g.value(p, new_annotation)
+            if x is not None: 
+                #print(f"value found of {type(x)} with value {x}")
+                if p not in p_map and p not in s_map and p not in o_map:
+                    print(f"adding map between {p} and {x}")
+                    p_map[p]=onto_namespace[str(x)]
+
+        """     
+        g2=Graph()
+        g2+=g
+        from itertools import chain 
+        for old_iri, new_iri in chain(s_map.items(), p_map.items(), o_map.items()):
+            for s, p, o in g:
+                if s == old_iri:
+                    g.remove((s, p, o))
+                    g.add((new_iri, p, o))
+                elif p == old_iri:
+                    g.remove((s, p, o))
+                    g.add((s, new_iri, o))
+                elif o == old_iri:
+                    g.remove((s, p, o))
+                    g.add((s, p, new_iri))
+            
+        """        
+        return {"s_map":s_map, "o_map":o_map, "p_map":p_map}            
+    
+    def replace_iri(self):    
+        """
+        """
+
+        mega_g=Graph()
+        for ontology_name, g in self.ontology_graphs.items():
+            mega_g += g
+
+        sop_map=self.emmo_to_label_graph("http://emmo.info/emmo#", SKOS.prefLabel, mega_g)
+        print ("done mapping")
+
+
+        total_graphs = len(self.ontology_graphs)
+        done_so_far = 0
+        for ontology_name, g in self.ontology_graphs.items():
+            print (f"graph No. {done_so_far}/{total_graphs}")
+            done_so_far = done_so_far + 1
+            
+            for k, v in sop_map.items():
+                print (k, len(v))
+                # loop over s, o, and p maps 
+                for old_iri, new_iri in v.items():
+                    #print(f"old {old_iri}, new {new_iri}")
+                    # for each map, loop over s/p/o and new IRI
+                    for s, p, o in g:
+                        if s == old_iri:
+                            g.remove((s, p, o))
+                            g.add((new_iri, p, o))
+                        elif p == old_iri:
+                            g.remove((s, p, o))
+                            g.add((s, new_iri, o))
+                        elif o == old_iri:
+                            g.remove((s, p, o))
+                            g.add((s, p, new_iri))
+
+
+    def replace_iri2(self):    
+        """
+        """
+
+        mega_g=Graph()
+        for ontology_name, g in self.ontology_graphs.items():
+            mega_g += g
+
+        sop_map=self.emmo_to_label_graph("http://emmo.info/emmo#", SKOS.prefLabel, mega_g)
+        print ("done mapping")
+
+
+        total_graphs = len(self.ontology_graphs)
+        done_so_far = 0
+        for ontology_name, g in self.ontology_graphs.items():
+            print (f"graph {ontology_name}: No. {done_so_far}/{total_graphs}")
+            done_so_far = done_so_far + 1
+            
+            for k, v in sop_map.items():
+                print (k, len(v))
+                # loop over s, o, and p maps 
+                for old_iri, new_iri in v.items():
+                    # SPARQL query to check for the IRI
+                    query = """
+                            ASK WHERE {
+                                { <%s> ?p ?o }
+                                UNION
+                                { ?s <%s> ?o }
+                                UNION
+                                { ?s ?p <%s> }
+                            }
+                            """ % (old_iri, old_iri, old_iri)
+                    if g.query(query).askAnswer:
+                        #print(f"old {old_iri}, new {new_iri}")
+                        # for each map, loop over s/p/o and new IRI
+                        for s, p, o in g:
+                            if s == old_iri:
+                                g.remove((s, p, o))
+                                g.add((new_iri, p, o))
+                            elif p == old_iri:
+                                g.remove((s, p, o))
+                                g.add((s, new_iri, o))
+                            elif o == old_iri:
+                                g.remove((s, p, o))
+                                g.add((s, p, new_iri))
+
+
+
+
+    def replace_iri3(self):    
+        """
+        """
+
+        mega_g=Graph()
+        for ontology_name, g in self.ontology_graphs.items():
+            mega_g += g
+
+        sop_map=self.emmo_to_label_graph("http://emmo.info/emmo#", SKOS.prefLabel, mega_g)
+        print ("done mapping")
+
+
+        total_graphs = len(self.ontology_graphs)
+        done_so_far = 0
+        for ontology_name, g in self.ontology_graphs.items():
+            print (f"graph {ontology_name}: No. {done_so_far}/{total_graphs}")
+            done_so_far = done_so_far + 1
+            
+            for k, v in sop_map.items():
+                print (k, len(v))
+                # loop over s, o, and p maps 
+                for old_iri, new_iri in v.items():
+                    # SPARQL update query
+                    update_query = """
+                            DELETE {{ ?s ?p <{old_iri}> }} INSERT {{ ?s ?p <{new_iri}> }} WHERE {{ ?s ?p <{old_iri}> }};
+                            DELETE {{ <{old_iri}> ?p ?o }} INSERT {{ <{new_iri}> ?p ?o }} WHERE {{ <{old_iri}> ?p ?o }};
+                            DELETE {{ ?s <{old_iri}> ?o }} INSERT {{ ?s <{new_iri}> ?o }} WHERE {{ ?s <{old_iri}> ?o }};
+                                """.format(old_iri=old_iri, new_iri=new_iri)
+                    # Execute the update query
+                    g.update(update_query)

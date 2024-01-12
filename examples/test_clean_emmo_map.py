@@ -1,5 +1,6 @@
 from ontology_manager.ontology_utils import OntologyManager
 from rdflib import Graph, URIRef, Namespace, Literal, BNode
+from rdflib.namespace import SKOS
 
 """
 create and adapt for unit teting 
@@ -25,32 +26,28 @@ def main():
 
     manager = OntologyManager(base_path, catalog_file)
     manager.parse_catalog()
-    # Use other methods as needed
     manager.load_ontology()
-    #for _, __ in manager.ontology_graphs.items():
-    #    print(_, __)#, manager.get_last_path_segment(_))
-
-    #print(80*'-')
-    print("fixing the emmo horror\n")
-
-    k=manager.find('properties')
-    print(k, len(k), 'ontologyies match, they are')
     
+    print("fixing the emmo IRI horror\n")
+
+    k=manager.find('perceptual')
+    print(f"{k}, {len(k)} ontologies match, they are:")
     [print(i) for i in k]
 
-    onto_properties=manager.ontology_graphs[str(k[0])]
-    print (type(onto_properties))
-    print(onto_properties.serialize())
+
+    g=manager.ontology_graphs[str(k[0])]
+
+    #onto_properties_graph=manager.ontology_graphs[str(k[0])]
+    #print (type(onto_properties_graph))
+    #print(onto_properties_graph.serialize())
 
 
-    manager.emmo_to_label("http://emmo.info/emmo", "EMMO_", "skos:prefLabel") # not sure we need the prefix! 
-
+    so_map=manager.emmo_to_label_graph("http://emmo.info/emmo", "EMMO_", SKOS.prefLabel, g ) 
     
-
-    #for suri in ('http://example.org/people#bob', 'http://example.org/people/bob', 'http://example.org/people:bob'):
-    #    print (suri)    
-    #    o=manager.parse_uri(URIRef(suri))
-    #   print(o)
+    print(len(so_map["s_map"]), len(so_map['o_map']), len(so_map['p_map']))
+  
+    g2=so_map["g"]
+    print (g2.serialize(format='n3'))
 
 
 if __name__ == "__main__":
