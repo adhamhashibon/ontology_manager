@@ -40,6 +40,8 @@ def vis(g, start_serial_number=None, max_string_length=None):
     gfilterred = Proxy(g, filter)
     and then path the filter obejct, .. instead of making copites of g..
     """
+    if max_string_length is None:
+        max_string_length = 50
     global output_file_serial_number  # TODO: should be a class parameter
     output_folder = "OnoVis.Output"  # TODO: should be a class parameter
     # Create a copy of the graph
@@ -142,8 +144,6 @@ class OntoVis:
             superclass_uri = row.superclass
             sub_graph.add((class_uri, self.RDFS.subClassOf, superclass_uri))
             self._add_superclasses(superclass_uri, sub_graph, depth - 1)
-
-    from rdflib import Graph, URIRef
 
     def zoom_in(self, root_uri, distance):
         """
