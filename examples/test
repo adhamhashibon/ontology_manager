@@ -1,0 +1,33 @@
+from rdflib import Graph, URIRef, Literal
+g = Graph()
+a, b, l = URIRef('a'), URIRef('b'), Literal('l')
+p, q = URIRef('p'), URIRef('q')
+edges = [(a, p, b), (a, q, b), (b, p, a), (b, p, l)]
+for t in edges:
+    g.add(t)
+
+mdg = rdflib_to_graphtool(g)
+len(list(mdg.edges()))
+
+from graph_tool import util as gt_util
+vpterm = mdg.vertex_properties['term']
+va = gt_util.find_vertex(mdg, vpterm, a)[0]
+vb = gt_util.find_vertex(mdg, vpterm, b)[0]
+vl = gt_util.find_vertex(mdg, vpterm, l)[0]
+(va, vb) in [(e.source(), e.target()) for e in list(mdg.edges())]
+
+epterm = mdg.edge_properties['term']
+len(list(gt_util.find_edge(mdg, epterm, p))) == 3
+
+len(list(gt_util.find_edge(mdg, epterm, q))) == 1
+
+
+mdg = rdflib_to_graphtool(
+    g,
+    e_prop_names=[str('name')],
+    transform_p=lambda s, p, o: {str('name'): unicode(p)})
+epterm = mdg.edge_properties['name']
+len(list(gt_util.find_edge(mdg, epterm, unicode(p)))) == 3
+
+len(list(gt_util.find_edge(mdg, epterm, unicode(q)))) == 1
+

@@ -1,0 +1,314 @@
+digraph { 
+ node [ fontname="DejaVu Sans" ] ; 
+	node0 -> node1 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node2 -> node3 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node6 -> node7 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node8 -> node9 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node10 -> node11 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node4 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node14 -> node15 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node16 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node18 -> node19 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node20 -> node21 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node22 -> node23 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:onProperty</font> > ] ;
+	node26 -> node27 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node28 -> node29 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node32 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node11 -> node33 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node34 -> node35 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node37 -> node38 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node39 -> node40 [ color=BLACK, label=< <font point-size='10' color='#336633'>domeES:Consumes</font> > ] ;
+	node41 -> node42 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node43 -> node44 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node46 -> node47 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node48 -> node15 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node21 -> node50 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node51 -> node42 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node52 -> node23 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node50 -> node53 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node55 -> node56 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node14 -> node57 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node54 -> node40 [ color=BLACK, label=< <font point-size='10' color='#336633'>domeES:Provides</font> > ] ;
+	node58 -> node2 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node59 -> node23 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node44 -> node10 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node22 -> node60 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:someValuesFrom</font> > ] ;
+	node13 -> node54 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node46 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node61 -> node23 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:onProperty</font> > ] ;
+	node62 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node63 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node4 -> node22 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node45 -> node53 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node1 -> node66 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node62 -> node67 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node48 -> node57 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node61 -> node24 [ color=BLACK, label=< <font point-size='10' color='#336633'>owl:someValuesFrom</font> > ] ;
+	node68 -> node53 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node30 -> node63 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node48 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node69 -> node39 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node66 -> node31 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node71 -> node56 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node72 -> node73 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node37 -> node18 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node46 -> node21 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node48 -> node41 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node75 -> node27 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node77 -> node78 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node80 -> node81 [ color=BLACK, label=< <font point-size='10' color='#336633'>mio:hasPart</font> > ] ;
+	node81 -> node82 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node83 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node24 -> node42 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node84 -> node15 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node80 -> node85 [ color=BLACK, label=< <font point-size='10' color='#336633'>mio:hasPart</font> > ] ;
+	node86 -> node87 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node5 -> node70 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node9 -> node73 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node88 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node80 -> node45 [ color=BLACK, label=< <font point-size='10' color='#336633'>mio:hasPart</font> > ] ;
+	node89 -> node56 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node35 -> node70 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node42 -> node90 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node92 -> node93 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node20 -> node47 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node94 -> node73 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node80 -> node58 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node54 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node95 -> node60 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node49 -> node24 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node29 -> node27 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node47 -> node50 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node84 -> node57 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node65 -> node33 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node33 -> node34 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node7 -> node68 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node23 -> node87 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node56 -> node86 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subPropertyOf</font> > ] ;
+	node39 -> node0 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node96 -> node65 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node74 -> node51 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node97 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node98 -> node27 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node36 -> node54 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node79 -> node42 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node84 -> node67 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:domain</font> > ] ;
+	node60 -> node12 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node64 -> node33 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node101 -> node24 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node3 -> node82 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node38 -> node29 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node41 -> node61 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node99 -> node4 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node91 -> node70 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node100 -> node68 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node82 -> node29 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node25 -> node77 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node76 -> node64 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+	node20 -> node17 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:range</font> > ] ;
+	node67 -> node63 [ color=BLACK, label=< <font point-size='10' color='#336633'>rdfs:subClassOf</font> > ] ;
+# http://www.ddmd.io/mio/Agent node0
+node0 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Agent</B></td></tr><tr><td href='http://www.ddmd.io/mio/Agent' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Agent</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Stakeholder node1
+node1 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Stakeholder</B></td></tr><tr><td href='http://www.ddmd.io/mio/Stakeholder' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Stakeholder</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/CUDS node2
+node2 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Common Universal and Unified Data Structure</B></td></tr><tr><td href='http://www.ddmd.io/mio/CUDS' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/CUDS</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/DataSet node3
+node3 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data Set</B></td></tr><tr><td href='http://www.ddmd.io/mio/DataSet' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/DataSet</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Sample node4
+node4 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Sample</B></td></tr><tr><td href='http://www.ddmd.io/mio/Sample' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Sample</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Geometrical node5
+node5 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Geometrical</B></td></tr><tr><td href='http://www.ddmd.io/mio/Geometrical' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Geometrical</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Visualization_Software node6
+node6 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Visualization Software</B></td></tr><tr><td href='http://www.ddmd.io/mio/Visualization_Software' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Visualization_Software</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Data_Analysis_Tool node7
+node7 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data_Analysis_Tool</B></td></tr><tr><td href='http://www.ddmd.io/mio/Data_Analysis_Tool' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Data_Analysis_Tool</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#type node8
+node8 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>type</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#type' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#type</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Indentifying_Property node9
+node9 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Indentifying_Property</B></td></tr><tr><td href='http://www.ddmd.io/mio/Indentifying_Property' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Indentifying_Property</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Output node10
+node10 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Output</B></td></tr><tr><td href='http://www.ddmd.io/mio/Output' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Output</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Superceding node11
+node11 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Superceding</B></td></tr><tr><td href='http://www.ddmd.io/mio/Superceding' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Superceding</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Matter node12
+node12 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Matter</B></td></tr><tr><td href='http://www.ddmd.io/mio/Matter' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Matter</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#data_provider node13
+node13 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data provider</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#data_provider' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#data_provider</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Result_Value node14
+node14 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Result_Value</B></td></tr><tr><td href='http://www.ddmd.io/mio/Result_Value' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Result_Value</font></td></tr></table> > ] 
+# http://www.w3.org/2001/XMLSchema#float node15
+node15 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>float</B></td></tr><tr><td href='http://www.w3.org/2001/XMLSchema#float' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2001/XMLSchema#float</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Result_Unit node16
+node16 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Result_Unit</B></td></tr><tr><td href='http://www.ddmd.io/mio/Result_Unit' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Result_Unit</font></td></tr></table> > ] 
+# http://www.w3.org/2001/XMLSchema#string node17
+node17 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>string</B></td></tr><tr><td href='http://www.w3.org/2001/XMLSchema#string' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2001/XMLSchema#string</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Data_Analysis node18
+node18 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data Analysis</B></td></tr><tr><td href='http://www.ddmd.io/mio/Data_Analysis' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Data_Analysis</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Anaysis node19
+node19 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Anaysis</B></td></tr><tr><td href='http://www.ddmd.io/mio/Anaysis' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Anaysis</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Equipment_Serial_Number node20
+node20 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Equipment_Serial_Number</B></td></tr><tr><td href='http://www.ddmd.io/mio/Equipment_Serial_Number' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Equipment_Serial_Number</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Test_Equipment node21
+node21 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Test Equipment</B></td></tr><tr><td href='http://www.ddmd.io/mio/Test_Equipment' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Test_Equipment</font></td></tr></table> > ] 
+# n399f64a349894aef9692c990eddbc8c6b2 node22
+node22 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>n399f64a349894aef9692c990eddbc8c6b2</B></td></tr><tr><td href='n399f64a349894aef9692c990eddbc8c6b2' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>n399f64a349894aef9692c990eddbc8c6b2</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/hasPart node23
+node23 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>hasPart</B></td></tr><tr><td href='http://www.ddmd.io/mio/hasPart' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/hasPart</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Process_Step node24
+node24 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Process Step or Unit of work</B></td></tr><tr><td href='http://www.ddmd.io/mio/Process_Step' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Process_Step</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#data_platform node25
+node25 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>data_platform</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#data_platform' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#data_platform</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Literal node26
+node26 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Literal</B></td></tr><tr><td href='http://www.ddmd.io/mio/Literal' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Literal</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Sign node27
+node27 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Sign</B></td></tr><tr><td href='http://www.ddmd.io/mio/Sign' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Sign</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Raw_Data node28
+node28 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Raw Data</B></td></tr><tr><td href='http://www.ddmd.io/mio/Raw_Data' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Raw_Data</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Data node29
+node29 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data</B></td></tr><tr><td href='http://www.ddmd.io/mio/Data' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Data</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Medium node30
+node30 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Medium</B></td></tr><tr><td href='http://www.ddmd.io/mio/Medium' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Medium</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/entity node31
+node31 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Entity</B></td></tr><tr><td href='http://www.ddmd.io/mio/entity' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/entity</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Actor node32
+node32 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Actor</B></td></tr><tr><td href='http://www.ddmd.io/mio/Actor' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Actor</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Stages node33
+node33 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Stage</B></td></tr><tr><td href='http://www.ddmd.io/mio/Stages' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Stages</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Relative node34
+node34 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Relative</B></td></tr><tr><td href='http://www.ddmd.io/mio/Relative' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Relative</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Ordered node35
+node35 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Ordered</B></td></tr><tr><td href='http://www.ddmd.io/mio/Ordered' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Ordered</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#app_provider node36
+node36 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>App provider</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#app_provider' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#app_provider</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Data_Visualization node37
+node37 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data Visualization</B></td></tr><tr><td href='http://www.ddmd.io/mio/Data_Visualization' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Data_Visualization</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Displayed_Data node38
+node38 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Displayed Data</B></td></tr><tr><td href='http://www.ddmd.io/mio/Displayed_Data' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Displayed_Data</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#service_consumer node39
+node39 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Service consumer</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#service_consumer' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#service_consumer</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#Service node40
+node40 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Service</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#Service' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#Service</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Material_Manufacturing node41
+node41 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Material Manufacturing</B></td></tr><tr><td href='http://www.ddmd.io/mio/Material_Manufacturing' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Material_Manufacturing</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Process node42
+node42 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Process</B></td></tr><tr><td href='http://www.ddmd.io/mio/Process' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Process</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Test_Result node43
+node43 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Test_Result</B></td></tr><tr><td href='http://www.ddmd.io/mio/Test_Result' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Test_Result</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Result node44
+node44 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Result</B></td></tr><tr><td href='http://www.ddmd.io/mio/Result' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Result</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#web_platform node45
+node45 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Web_Platform</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#web_platform' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#web_platform</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Equipment_Model node46
+node46 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Equipment_Model</B></td></tr><tr><td href='http://www.ddmd.io/mio/Equipment_Model' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Equipment_Model</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Specimen_Preparation_Equipment node47
+node47 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Specimen Preparation Equipment</B></td></tr><tr><td href='http://www.ddmd.io/mio/Specimen_Preparation_Equipment' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Specimen_Preparation_Equipment</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/RawMaterial node48
+node48 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>RawMaterial</B></td></tr><tr><td href='http://www.ddmd.io/mio/RawMaterial' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/RawMaterial</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Analysis node49
+node49 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Analysis</B></td></tr><tr><td href='http://www.ddmd.io/mio/Analysis' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Analysis</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Hardware node50
+node50 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Hardware</B></td></tr><tr><td href='http://www.ddmd.io/mio/Hardware' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Hardware</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Experiment node51
+node51 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Experiment</B></td></tr><tr><td href='http://www.ddmd.io/mio/Experiment' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Experiment</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#Consumes node52
+node52 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Consumes</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#Consumes' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#Consumes</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Tool node53
+node53 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Tool</B></td></tr><tr><td href='http://www.ddmd.io/mio/Tool' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Tool</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#service_provider node54
+node54 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Service provider</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#service_provider' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#service_provider</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/IsPreceededBy node55
+node55 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>IsPreceededBy</B></td></tr><tr><td href='http://www.ddmd.io/mio/IsPreceededBy' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/IsPreceededBy</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/RelativeProperty node56
+node56 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>RelativeProperty</B></td></tr><tr><td href='http://www.ddmd.io/mio/RelativeProperty' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/RelativeProperty</font></td></tr></table> > ] 
+# http://www.w3.org/2001/XMLSchema#decimal node57
+node57 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>decimal</B></td></tr><tr><td href='http://www.w3.org/2001/XMLSchema#decimal' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.w3.org/2001/XMLSchema#decimal</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/SDS node58
+node58 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Semantic Data Structure or Set</B></td></tr><tr><td href='http://www.ddmd.io/mio/SDS' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/SDS</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#Provides node59
+node59 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Provides</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#Provides' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#Provides</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Material node60
+node60 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Material</B></td></tr><tr><td href='http://www.ddmd.io/mio/Material' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Material</font></td></tr></table> > ] 
+# n399f64a349894aef9692c990eddbc8c6b1 node61
+node61 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>n399f64a349894aef9692c990eddbc8c6b1</B></td></tr><tr><td href='n399f64a349894aef9692c990eddbc8c6b1' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>n399f64a349894aef9692c990eddbc8c6b1</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Parameter_Unit node62
+node62 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Parameter_Unit</B></td></tr><tr><td href='http://www.ddmd.io/mio/Parameter_Unit' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Parameter_Unit</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Environment node63
+node63 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Environment</B></td></tr><tr><td href='http://www.ddmd.io/mio/Environment' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Environment</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Overlapping node64
+node64 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Overlapping</B></td></tr><tr><td href='http://www.ddmd.io/mio/Overlapping' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Overlapping</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Preceding node65
+node65 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Preceding</B></td></tr><tr><td href='http://www.ddmd.io/mio/Preceding' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Preceding</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Participant node66
+node66 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Participant</B></td></tr><tr><td href='http://www.ddmd.io/mio/Participant' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Participant</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Test_Environment node67
+node67 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Test Environment</B></td></tr><tr><td href='http://www.ddmd.io/mio/Test_Environment' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Test_Environment</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Software node68
+node68 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Software</B></td></tr><tr><td href='http://www.ddmd.io/mio/Software' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Software</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#data_consumer node69
+node69 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data consumer</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#data_consumer' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#data_consumer</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Mereotopological node70
+node70 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Mereotopological</B></td></tr><tr><td href='http://www.ddmd.io/mio/Mereotopological' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Mereotopological</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/isSuperceededBy node71
+node71 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>isSuperceededBy</B></td></tr><tr><td href='http://www.ddmd.io/mio/isSuperceededBy' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/isSuperceededBy</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Physical_Property node72
+node72 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Physical_Property</B></td></tr><tr><td href='http://www.ddmd.io/mio/Physical_Property' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Physical_Property</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Property node73
+node73 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Property</B></td></tr><tr><td href='http://www.ddmd.io/mio/Property' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Property</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Test node74
+node74 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Test</B></td></tr><tr><td href='http://www.ddmd.io/mio/Test' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Test</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Quantity node75
+node75 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Quantity</B></td></tr><tr><td href='http://www.ddmd.io/mio/Quantity' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Quantity</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Condition node76
+node76 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Condition</B></td></tr><tr><td href='http://www.ddmd.io/mio/Condition' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Condition</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#platform_type node77
+node77 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>platform type</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#platform_type' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#platform_type</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/type node78
+node78 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>type</B></td></tr><tr><td href='http://www.ddmd.io/mio/type' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/type</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Cognition node79
+node79 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Cognition</B></td></tr><tr><td href='http://www.ddmd.io/mio/Cognition' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Cognition</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#data_set node80
+node80 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Dome Data Set</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#data_set' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#data_set</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Datum node81
+node81 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Datum</B></td></tr><tr><td href='http://www.ddmd.io/mio/Datum' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Datum</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Encoded_Data node82
+node82 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Encoded_Data</B></td></tr><tr><td href='http://www.ddmd.io/mio/Encoded_Data' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Encoded_Data</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Specimen_ID node83
+node83 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Specimen_ID</B></td></tr><tr><td href='http://www.ddmd.io/mio/Specimen_ID' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Specimen_ID</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Parameter_Value node84
+node84 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Parameter_Value</B></td></tr><tr><td href='http://www.ddmd.io/mio/Parameter_Value' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Parameter_Value</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#web_platforme node85
+node85 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>web_platforme</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#web_platforme' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#web_platforme</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/MereotopologicalProperty node86
+node86 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>MereotopologicalProperty</B></td></tr><tr><td href='http://www.ddmd.io/mio/MereotopologicalProperty' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/MereotopologicalProperty</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/has node87
+node87 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>has</B></td></tr><tr><td href='http://www.ddmd.io/mio/has' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/has</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Specimen_Dimensions node88
+node88 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Specimen_Dimensions</B></td></tr><tr><td href='http://www.ddmd.io/mio/Specimen_Dimensions' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Specimen_Dimensions</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/isOverlapping node89
+node89 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>isOverlapping</B></td></tr><tr><td href='http://www.ddmd.io/mio/isOverlapping' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/isOverlapping</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Work node90
+node90 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Work</B></td></tr><tr><td href='http://www.ddmd.io/mio/Work' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Work</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Spatial node91
+node91 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Spatial</B></td></tr><tr><td href='http://www.ddmd.io/mio/Spatial' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Spatial</font></td></tr></table> > ] 
+# http://dome40.eu/semantics/dome4.0_core#service node92
+node92 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Service</B></td></tr><tr><td href='http://dome40.eu/semantics/dome4.0_core#service' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://dome40.eu/semantics/dome4.0_core#service</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/work node93
+node93 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>work</B></td></tr><tr><td href='http://www.ddmd.io/mio/work' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/work</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Reference_Property node94
+node94 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Reference_Property</B></td></tr><tr><td href='http://www.ddmd.io/mio/Reference_Property' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Reference_Property</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Composite_Material node95
+node95 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Composite Material</B></td></tr><tr><td href='http://www.ddmd.io/mio/Composite_Material' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Composite_Material</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Input node96
+node96 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Input</B></td></tr><tr><td href='http://www.ddmd.io/mio/Input' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Input</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/name node97
+node97 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>name</B></td></tr><tr><td href='http://www.ddmd.io/mio/name' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/name</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Mathematical node98
+node98 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Mathematical</B></td></tr><tr><td href='http://www.ddmd.io/mio/Mathematical' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Mathematical</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Specimen node99
+node99 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Specimen</B></td></tr><tr><td href='http://www.ddmd.io/mio/Specimen' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Specimen</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Data_Storage_Tool node100
+node100 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Data Storage Tool</B></td></tr><tr><td href='http://www.ddmd.io/mio/Data_Storage_Tool' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Data_Storage_Tool</font></td></tr></table> > ] 
+# http://www.ddmd.io/mio/Measurement node101
+node101 [ shape=none, color=black label=< <table color='#666666' cellborder='0' cellspacing='0' border='1'><tr><td colspan='2' bgcolor='grey'><B>Measurement</B></td></tr><tr><td href='http://www.ddmd.io/mio/Measurement' bgcolor='#eeeeee' colspan='2'><font point-size='10' color='#6666ff'>http://www.ddmd.io/mio/Measurement</font></td></tr></table> > ] 
+}
