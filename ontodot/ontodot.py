@@ -1,10 +1,8 @@
-import os
-import io
-import pydotplus
+import os, io, pydotplus, copy
 from IPython.display import display, Image
 from rdflib.tools.rdf2dot import rdf2dot
-import copy
 from rdflib import RDFS, Literal, Graph, BNode, Namespace, URIRef
+from rdflib.namespace import RDF, SKOS, RDFS, FOAF, OWL, RDF
 
 # Initialize a global counter for the serial number
 output_file_serial_number = 0
@@ -27,7 +25,7 @@ def next_serial():
         output_file_serial_number += 1
 
 
-def vis(g, start_serial_number=None, max_string_length=None):
+def vis(g, start_serial_number=None, max_string_length=25):
     """
     TODO: visualise a graph, should this be a class method or a separate function, or a method that
     has access to the class state?
@@ -51,8 +49,11 @@ def vis(g, start_serial_number=None, max_string_length=None):
 
     # Remove triples with rdfs:comment or long literals, ( this is the heuristics basically)
     for s, p, o in g:
-        if p == RDFS.comment or (isinstance(o, Literal) and len(str(o)) > max_string_length):
+        # if p == RDFS.comment or p == RDF.type:
+        if p == RDFS.comment:
             g_copy.remove((s, p, o))  # would be skiped, in the filter above. (checl a Px=Proxy(x, filter) generator);
+        elif (isinstance(o, Literal) and len(str(o)) > max_string_length):
+            o = Literal(str(o)[0:max_string_length])
 
     # get the next available serial number of the output
     if start_serial_number is None:
@@ -82,10 +83,33 @@ def vis(g, start_serial_number=None, max_string_length=None):
         dot_file.write(stream.getvalue())
 
 
+def filter_graph_by_string(g: Graph, the_str: str):
+    """
+     Create a new subgraph with any elements that contain the_str in either the iri, the rdf:label or the skos:preflabel
+     this is a case insensitive.
+    """
+
+    def contains_str(txt, sp):
+        if txt.lower() in str(sp).lower():
+            return True
+        else:
+            return False
+
+    filtered_graph = Graph()
+
+    for s, p, o in g:
+        is_str = False
+        if any(contains_str(the_str, x) for x in [s, p, o]):
+            filtered_graph.add((s, p, o))
+
+    return filtered_graph
+
+
 class OntoVis:
     """
     provide some graph operatiosn to help visualisation, should change the name ...
     """
+
     def __init__(self, g: Graph):
         self.RDFS = Namespace("http://www.w3.org/2000/01/rdf-schema#")
         self.OWL = Namespace("http://www.w3.org/2002/07/owl#")
@@ -123,7 +147,6 @@ class OntoVis:
         }
         """ % class_uri
         for row in self.g.query(query):
-            print(row)
             subclass_uri = row.subclass
             sub_graph.add((subclass_uri, self.RDFS.subClassOf, class_uri))
             self._add_subclasses(subclass_uri, sub_graph, depth - 1)
@@ -140,7 +163,6 @@ class OntoVis:
         }
         """ % class_uri
         for row in self.g.query(query):
-            print(row)
             superclass_uri = row.superclass
             sub_graph.add((class_uri, self.RDFS.subClassOf, superclass_uri))
             self._add_superclasses(superclass_uri, sub_graph, depth - 1)
@@ -151,6 +173,7 @@ class OntoVis:
         which is how many relations in between.
         """
         zoom_in_graph = Graph()
+        root_uri = URIRef(root_uri)
         self._traverse_graph(root_uri, zoom_in_graph, distance, set())
         return zoom_in_graph
 
@@ -260,10 +283,7 @@ class Filter_Proxy:
         # Example condition: filter triples where predicate matches a certain criterion
         return p == "some_predicate"
 
-    # Example usage with triples
-    x = [("subject1", "some_predicate", "object1"),
-         ("subject2", "another_predicate", "object2"),
-         ("subject3", "some_predicate", "object3")]
+
 
     px = Proxy(x, filter_triple)
     for s, p, o in px:
@@ -271,6 +291,7 @@ class Filter_Proxy:
 
     TODO: check alternative, proxy pattern with hooks for __getattr_...
     """
+
     def __init__(self, x, filter_func):
         self.x = x
         self.filter_func = filter_func
@@ -278,3 +299,82 @@ class Filter_Proxy:
     def __iter__(self):
         return (item for item in self.x if self.filter_func(*item))
 
+
+def printH(s):
+    the_line = "=" * (len(s) + 1)
+    print(f"{s}:\n{the_line}")
+
+
+def auto_bind_namespaces(g: Graph, prefixes_copy_paste_string):
+    """
+    prefixes_copy_paste_string is as the name suggestes a copy paste of the header in attl file with
+    the form:
+    @prefix dcat: <http://www.w3.org/ns/dcat#> .
+
+
+    i.e, no additional comments...
+    and g is any Graph
+    """
+    nbinds = {}
+    split_to_lines = prefixes_copy_paste_string.strip().split("\n")
+    for line in split_to_lines:
+        the_parts = line.split()
+        if the_parts[0] == "@prefix":
+            prefix = the_parts[1].rstrip(":")
+            uri = the_parts[2].lstrip("<").rstrip("> .")
+            print(f"g.bind({prefix}, {Namespace(uri)})")
+            g.bind(prefix, Namespace(uri))
+            nbinds[prefix] = Namespace(uri)
+    return (nbinds)
+
+
+import random
+from datetime import datetime, timedelta
+
+
+def random_date_time():
+    """
+    Generate a random date and time between one year ago and one year in the future from today.
+    Returns the date and time as a datetime object.
+    """
+    today = datetime.now()
+    start = today - timedelta(days=365)
+    end = today + timedelta(days=365)
+
+    # Generate a random number of seconds between start and end
+    random_seconds = random.randint(0, int((end - start).total_seconds()))
+
+    # Add the random number of seconds to the start time
+    random_date = start + timedelta(seconds=random_seconds)
+
+    return random_date
+
+
+import uuid
+
+
+def generate_uuid():
+    """
+    Generate a random UUID.
+    Returns the UUID as a string.
+    """
+    return str(uuid.uuid4())
+
+
+import random
+
+
+def generate_random_materialproject_id():
+    prefix = "mp-"  # Materials Project ID prefix
+
+    suffix_length = 5  # Number of digits in the suffix
+
+    # Generate random suffix with numbers
+
+    suffix = ''.join(random.choices('0123456789', k=suffix_length))
+
+    # Combine prefix and suffix to form the Materials Project ID
+
+    material_id = f"{prefix}{suffix}"
+
+    return material_id
