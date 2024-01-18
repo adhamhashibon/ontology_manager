@@ -174,7 +174,7 @@ class OntoVis:
         """
         zoom_in_graph = Graph()
         root_uri = URIRef(root_uri)
-        self._traverse_graph(root_uri, zoom_in_graph, distance, set())
+        self._traverse_graph(root_uri, zoom_in_graph, distance-1, set())
         return zoom_in_graph
 
     def _traverse_graph2(self, uri, zoom_in_graph, distance, visited):
@@ -365,16 +365,10 @@ import random
 
 
 def generate_random_materialproject_id():
-    prefix = "mp-"  # Materials Project ID prefix
-
-    suffix_length = 5  # Number of digits in the suffix
-
-    # Generate random suffix with numbers
-
-    suffix = ''.join(random.choices('0123456789', k=suffix_length))
-
-    # Combine prefix and suffix to form the Materials Project ID
-
-    material_id = f"{prefix}{suffix}"
+    """
+    go from mp-1 to mp-5000
+    """
+    prefix = "mp-"
+    material_id = f"{prefix}{random.randint(1, 200)}"
 
     return material_id
