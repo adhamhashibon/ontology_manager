@@ -1,0 +1,317 @@
+@prefix : <http://www.ddmd.io/mio/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a owl:Ontology .
+
+:Cognition a owl:Class ;
+    rdfs:label "Cognition" ;
+    rdfs:comment "Represents the mental processes involved in acquiring, processing, and understanding information, often crucial in interpreting and analyzing test results." ;
+    rdfs:subClassOf :Process .
+
+:Composite_Material a owl:Class ;
+    rdfs:label "Composite Material" ;
+    rdfs:comment "Represents a material composed of two or more distinct constituents with different properties." ;
+    rdfs:subClassOf :Material .
+
+:Condition a owl:Class ;
+    rdfs:label "Condition" ;
+    rdfs:subClassOf :Overlapping .
+
+:DataSet a owl:Class ;
+    rdfs:label "Data Set" ;
+    rdfs:comment "Represents a collection of related data or information, often organized for analysis, presentation, or sharing." ;
+    rdfs:subClassOf :Encoded_Data .
+
+:Data_Storage_Tool a owl:Class ;
+    rdfs:label "Data Storage Tool" ;
+    rdfs:comment "Represents software or applications used for managing and organizing testing data in the context of mechanical testing of composites" ;
+    rdfs:subClassOf :Software .
+
+:Data_Visualization a owl:Class ;
+    rdfs:label "Data Visualization" ;
+    rdfs:comment "Represents the graphical representation of the data collected during the mechanical testing of composites." ;
+    rdfs:subClassOf :Data_Analysis,
+        :Displayed_Data .
+
+:Datum a owl:Class ;
+    rdfs:comment "Represents a single piece of information or observation, often considered as a basic unit of data." ;
+    rdfs:subClassOf :Encoded_Data .
+
+:Equipment_Model a owl:DatatypeProperty ;
+    rdfs:comment "Represents the model or version of the test equipment used" ;
+    rdfs:domain :Specimen_Preparation_Equipment,
+        :Test_Equipment ;
+    rdfs:range xsd:string .
+
+:Equipment_Serial_Number a owl:DatatypeProperty ;
+    rdfs:comment "Represents the unique serial number assigned to the test equipment." ;
+    rdfs:domain :Specimen_Preparation_Equipment,
+        :Test_Equipment ;
+    rdfs:range xsd:string .
+
+:Geometrical a owl:Class ;
+    rdfs:label "Geometrical" ;
+    rdfs:comment "Represents entities related to geometric properties, shapes, and dimensions." ;
+    rdfs:subClassOf :Mereotopological .
+
+:Indentifying_Property a owl:Class ;
+    rdfs:subClassOf :Property .
+
+:Input a owl:Class ;
+    rdfs:comment "Represents the data, material, or parameter provided as an input to a process, simulation, or test." ;
+    rdfs:subClassOf :Preceding .
+
+:IsPreceededBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RelativeProperty .
+
+:Literal a owl:Class ;
+    rdfs:subClassOf :Sign .
+
+:Mathematical a owl:Class ;
+    rdfs:subClassOf :Sign .
+
+:Measurement a owl:Class ;
+    rdfs:subClassOf :Process_Step .
+
+:Medium a owl:Class ;
+    rdfs:label "Medium" ;
+    rdfs:comment "Represents the medium or environment in which the mechanical testing of composite material specimens takes place." ;
+    rdfs:subClassOf :Environment .
+
+:Parameter_Unit a owl:DatatypeProperty ;
+    rdfs:comment "Represents the unit of measurement for a test parameter, such as \"MPa\" for stress or \"mm\" for displacement." ;
+    rdfs:domain :Test_Environment ;
+    rdfs:range xsd:string .
+
+:Parameter_Value a owl:DatatypeProperty ;
+    rdfs:comment "Represents the specific value or measurement of a test parameter." ;
+    rdfs:domain :Test_Environment ;
+    rdfs:range xsd:decimal,
+        xsd:float .
+
+:Physical_Property a owl:Class ;
+    rdfs:subClassOf :Property .
+
+:Quantity a owl:Class ;
+    rdfs:subClassOf :Sign .
+
+:RawMaterial a owl:DatatypeProperty ;
+    rdfs:comment "Represents the raw materials used in the manufacturing process, including name and quantity" ;
+    rdfs:domain :Material_Manufacturing ;
+    rdfs:range xsd:decimal,
+        xsd:float,
+        xsd:string .
+
+:Raw_Data a owl:Class ;
+    rdfs:label "Raw Data" ;
+    rdfs:comment "Represents unprocessed or unmodified data collected directly from measurements or observations before any transformation or encoding has been applied." ;
+    rdfs:subClassOf :Data .
+
+:Reference_Property a owl:Class ;
+    rdfs:subClassOf :Property .
+
+:Result_Unit a owl:DatatypeProperty ;
+    rdfs:comment "Represents the unit of measurement for a test result, such as \"MPa\" for strength or \"J/m²\" for fracture toughness." ;
+    rdfs:range xsd:string .
+
+:Result_Value a owl:DatatypeProperty ;
+    rdfs:comment "Represents the specific value or measurement of a test result" ;
+    rdfs:range xsd:decimal,
+        xsd:float .
+
+:Spatial a owl:Class ;
+    rdfs:label "Spatial" ;
+    rdfs:comment "Represents entities or concepts that pertain to the arrangement or distribution of objects or features in space." ;
+    rdfs:subClassOf :Mereotopological .
+
+:Specimen a owl:Class ;
+    rdfs:label "Specimen" ;
+    rdfs:comment "Represents a physical sample prepared for mechanical testing or analysis." ;
+    rdfs:subClassOf :Sample .
+
+:Specimen_Dimensions a owl:DatatypeProperty ;
+    rdfs:comment "Represents the dimensions or size of a test specimen." ;
+    rdfs:range xsd:string .
+
+:Specimen_ID a owl:DatatypeProperty ;
+    rdfs:comment "Represents the unique identifier or code assigned to a test specimen." ;
+    rdfs:range xsd:string .
+
+:Test a owl:Class ;
+    rdfs:label "Test" ;
+    rdfs:comment "Represents a procedure or experiment conducted to evaluate the mechanical properties of materials or composites." ;
+    rdfs:subClassOf :Experiment .
+
+:Test_Result a owl:Class ;
+    rdfs:subClassOf :Result .
+
+:Visualization_Software a owl:Class ;
+    rdfs:label "Visualization Software" ;
+    rdfs:comment "Represents computer programs or tools used to create visual representations of the data from mechanical testing of composites." ;
+    rdfs:subClassOf :Data_Analysis_Tool .
+
+:isConductedby a owl:ObjectProperty .
+
+:isOverlapping a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RelativeProperty .
+
+:isSuperceededBy a owl:ObjectProperty ;
+    rdfs:subPropertyOf :RelativeProperty .
+
+:name a owl:DatatypeProperty,
+        owl:FunctionalProperty ;
+    rdfs:range xsd:string .
+
+:utilizes a owl:ObjectProperty .
+
+:value a owl:DatatypeProperty .
+
+:Anaysis a owl:Class ;
+    rdfs:label "Analysis" ;
+    rdfs:comment "Represents the examination and interpretation of collected data to extract meaningful insights and draw conclusions." ;
+    rdfs:subClassOf :Process_Step .
+
+:Data_Analysis a owl:Class ;
+    rdfs:label "Data Analysis" ;
+    rdfs:comment "Represents the process of examining and interpreting the data obtained from the mechanical testing of composites." ;
+    rdfs:subClassOf :Anaysis .
+
+:Data_Analysis_Tool a owl:Class ;
+    rdfs:subClassOf :Software .
+
+:Displayed_Data a owl:Class ;
+    rdfs:label "Displayed Data" ;
+    rdfs:comment "Represents data that has been transformed into a visual or graphical representation for better understanding and interpretation." ;
+    rdfs:subClassOf :Data .
+
+:Experiment a owl:Class ;
+    rdfs:label "Experiment" ;
+    rdfs:comment "Represents a controlled procedure or investigation designed to gather data and test hypotheses related to material mechanical properties." ;
+    rdfs:subClassOf :Process .
+
+:Material_Manufacturing a owl:Class ;
+    rdfs:label "Material Manufacturing" ;
+    rdfs:comment "Represents the process of producing or fabricating composite materials and other types of materials." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty :hasPart ;
+            owl:someValuesFrom :Process_Step ],
+        :Process .
+
+:MereotopologicalProperty a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has .
+
+:Ordered a owl:Class ;
+    rdfs:label "Ordered" ;
+    rdfs:comment "Represents entities or concepts that possess a sequential or arranged relationship." ;
+    rdfs:subClassOf :Mereotopological .
+
+:Output a owl:Class ;
+    rdfs:label "Output" ;
+    rdfs:comment "Represents the result, product, or data generated by a process, experiment, or operation." ;
+    rdfs:subClassOf :Superceding .
+
+:Overlapping a owl:Class ;
+    rdfs:label "Overlapping" ;
+    rdfs:comment "Represents situations where entities or events share a common timeframe or exist simultaneously." ;
+    rdfs:subClassOf :Stages .
+
+:Preceding a owl:Class ;
+    rdfs:label "Preceding" ;
+    rdfs:comment "Represents entities or events that occur before or lead up to other entities or events in a chronological or logical order." ;
+    rdfs:subClassOf :Stages .
+
+:Relative a owl:Class ;
+    rdfs:label "Relative" ;
+    rdfs:comment "Represents entities or concepts that are described or measured in relation to other entities." ;
+    rdfs:subClassOf :Ordered .
+
+:Result a owl:Class ;
+    rdfs:subClassOf :Output .
+
+:Sample a owl:Class ;
+    rdfs:label "Sample" ;
+    rdfs:comment "Represents a portion of a material or composite material taken for testing or analysis." ;
+    rdfs:subClassOf :Matter .
+
+:Superceding a owl:Class ;
+    rdfs:label "Superceding" ;
+    rdfs:comment "Represents entities or events that come after or replace other entities or events, often rendering them obsolete or outdated." ;
+    rdfs:subClassOf :Stages .
+
+:Work a owl:Class .
+
+:Encoded_Data a owl:Class ;
+    rdfs:comment "Represents information that has been transformed into a specific format or encoding for storage or transmission." ;
+    rdfs:subClassOf :Data .
+
+:Environment a owl:Class ;
+    rdfs:subClassOf :Matter .
+
+:Hardware a owl:Class ;
+    rdfs:subClassOf :Tool .
+
+:Material a owl:Class ;
+    rdfs:label "Material" ;
+    rdfs:comment "Represents a substance or mixture of substances that constitutes an object." ;
+    rdfs:subClassOf :Matter .
+
+:Software a owl:Class ;
+    rdfs:subClassOf :Tool .
+
+:Specimen_Preparation_Equipment a owl:Class ;
+    rdfs:label "Specimen Preparation Equipment" ;
+    rdfs:comment "Represents a group of equipment used in the preparation of test specimens for mechanical testing of composites." ;
+    rdfs:subClassOf :Hardware .
+
+:Test_Environment a owl:Class ;
+    rdfs:label "Test Environment" ;
+    rdfs:comment "Represents the surrounding conditions and external factors that influence the mechanical test but are not directly controlled or intentionally varied during the test. The test environment includes aspects such as temperature, humidity, pressure, and other conditions in which the test specimen is subjected to during the test." ;
+    rdfs:subClassOf :Environment .
+
+:Test_Equipment a owl:Class ;
+    rdfs:label "Test Equipment" ;
+    rdfs:comment "Represents the various types of equipment and apparatus used for conducting mechanical testing of composite material specimens." ;
+    rdfs:subClassOf :Hardware .
+
+:Tool a owl:Class .
+
+:has a owl:ObjectProperty .
+
+:hasPart a owl:ObjectProperty ;
+    rdfs:subPropertyOf :has .
+
+:Data a owl:Class ;
+    rdfs:label "Data" ;
+    rdfs:comment "Represents the information obtained from mechanical testing of composites." ;
+    rdfs:subClassOf :Sign .
+
+:Matter a owl:Class .
+
+:Mereotopological a owl:Class ;
+    rdfs:label "Mereotopological" ;
+    rdfs:comment "In formal ontology, a branch of metaphysics, and in ontological computer science, mereotopology is a first-order theory, embodying mereological and topological concepts, of the relations among wholes, parts, parts of parts, and the boundaries between parts." .
+
+:Process_Step a owl:Class ;
+    rdfs:label "Process Step or Unit of work" ;
+    rdfs:comment "Represents a distinct stage or unit of work, contributing to the overall testing process." ;
+    rdfs:subClassOf :Process .
+
+:Property a owl:Class ;
+    rdfs:comment "Represents an attribute, characteristic, or quality that can be used to describe and differentiate entities. Properties provide additional information about individuals (instances of classes) within a domain." .
+
+:RelativeProperty a owl:ObjectProperty ;
+    rdfs:subPropertyOf :MereotopologicalProperty .
+
+:Stages a owl:Class ;
+    rdfs:label "Stage" ;
+    rdfs:comment "Represents distinct phases or steps within a process, sequence." ;
+    rdfs:subClassOf :Relative .
+
+:Process a owl:Class ;
+    rdfs:subClassOf :Work .
+
+:Sign a owl:Class .
+
+
